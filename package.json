@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Node Project One",
   "main": "index.js",
+  "types": "module",
   "scripts": {
     "start": "nodemon index.js"
   },
@@ -11,6 +12,7 @@
     "type": "git"
   },
   "dependencies": {
+    "express": "^4.18.2",
     "nanoid": "^3.3.1"
   },
   "devDependencies": {
