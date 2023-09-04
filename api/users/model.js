@@ -21,7 +21,7 @@ export const find = () => {
   return Promise.resolve(users)
 }
 
-export const findById = id => {
+export const findById = (id) => {
   // SELECT * FROM users WHERE id = 1;
   const user = users.find(d => d.id === id)
   return Promise.resolve(user)
