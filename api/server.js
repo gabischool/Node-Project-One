@@ -40,8 +40,25 @@ app.put('/api/users/update/:id',async(req,res)=>{
     if(updateUser){
         res.status(200).json({Message:"updated Success"})
     }else{
-        res.status(500).json({Message:"user not updated , try again "})
+        res.status(400).json({Message:"user not updated , try again "})
     }
+})
+
+app.delete('/api/users/delete/:id',async(req,res)=>{
+    let id   = req.params.id
+    const findUserToDelete = await findById(id);
+    if(findUserToDelete){
+    const deleteUser  =   await delete(req.params.id)
+    if(deleteUser){
+        res.status(200).json({Message:"User Deleted Success "})
+    }
+    }else{
+        res.status(400).json({Message:`wrong id ${id}`})
+    }
+   
+    
+   
+
 })
 
 app.listen(2000,(req,res)=>{
