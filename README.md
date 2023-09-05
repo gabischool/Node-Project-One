@@ -1,5 +1,26 @@
 # Node Project Code
 
+snippet client side 
+
+/ Home
+
+
+![image](https://github.com/Miirshe/Node-Project-One/assets/126691024/1a5c7080-3363-4503-b5de-a86eb51f1a3b)
+
+
+/ Add New User 
+
+
+![image](https://github.com/Miirshe/Node-Project-One/assets/126691024/2d65a03b-29aa-47d6-9ee8-617a04a9da6c)
+
+
+/ Filter Users by thier Name 
+
+![image](https://github.com/Miirshe/Node-Project-One/assets/126691024/e638156c-d589-41b5-b453-21b9b6f0d99c)
+
+
+
+
 ## Introduction
 
 - Building a RESTful API.
