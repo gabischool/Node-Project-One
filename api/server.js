@@ -13,7 +13,17 @@ app.get("/api/users", async (req, res) => {
     res.json(allUsers)
 })
 
-
+// find user by id 
+app.get("/api/users/:id", async (req, res) => {
+    let id   = req.params.id
+    const singleUser = await findById(id);
+    if(singleUser){
+        res.status(200).json(singleUser)
+    }else{
+        res.status(404).json({Message:`we can't find the user with id  of ${id}`})
+    }
+  
+})
 
 app.listen(2000,(req,res)=>{
     console.log("app is running .... ")
