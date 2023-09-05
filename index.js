@@ -5,3 +5,8 @@ const port = 9000;
 
 // START YOUR SERVER HERE
 
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+  });
+  
