@@ -1,9 +1,12 @@
 // Initialize express app
 import express from 'express'
+import cors from 'cors'
 import {find, findById, insert, update, remove} from './users/model.js'
 import bodyParser from 'body-parser';
 
 const app = express();
+app.use(cors())
+
 app.use(bodyParser.json())
 
 // GET ALL USERS - GET
@@ -53,5 +56,4 @@ app.delete('/api/users/delete_user/:id', async (req, res) => {
 })
 
 // export default app
-
 export default app;
