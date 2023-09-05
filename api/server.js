@@ -24,6 +24,15 @@ app.get("/api/users/:id", async (req, res) => {
     }
   
 })
+app.post('/api/users/insert',async(req,res)=>{
+    const newUser  = await insert(req.body);
+    if(newUser){
+        res.status(200).json({Message:"User Inserted Success !"})
+    }else{
+        res.status(500).json({Message:"Failed to Insert the record try  again "})
+    }
+  
+})
 
 app.listen(2000,(req,res)=>{
     console.log("app is running .... ")
