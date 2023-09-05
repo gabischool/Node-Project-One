@@ -33,6 +33,16 @@ app.post('/api/users/insert',async(req,res)=>{
     }
   
 })
+app.put('/api/users/update/:id',async(req,res)=>{
+    const id  =  req.params.id 
+    const body = req.body 
+    const updateUser =  await update(id,body)
+    if(updateUser){
+        res.status(200).json({Message:"updated Success"})
+    }else{
+        res.status(500).json({Message:"user not updated , try again "})
+    }
+})
 
 app.listen(2000,(req,res)=>{
     console.log("app is running .... ")
