@@ -11,13 +11,13 @@ app.use(cors());
 
 app.use(bodyParser.json());
 
-// GET ALL USERS - GET
+// GET ALL USERS
 app.get("/api/users", async (req, res) => {
   const AllUsers = await find();
   res.json(AllUsers);
 });
 
-// GET USER BY ID - GET
+// GET USER BY ID
 app.get("/api/users/:id", async (req, res) => {
   const SingalUser = await findById(req.params.id);
   if (SingalUser) {
@@ -27,7 +27,7 @@ app.get("/api/users/:id", async (req, res) => {
   }
 });
 
-// CREATE A NEW USER - POST
+// CREATE A NEW USER
 app.post("/api/users/create_user", async (req, res) => {
   const CreatingNewUser = await insert(req.body);
   if (CreatingNewUser) {
@@ -37,7 +37,7 @@ app.post("/api/users/create_user", async (req, res) => {
   }
 });
 
-// UPDATE A USER - PUT
+// UPDATE A USER
 app.put("/api/users/update_user/:id", async (req, res) => {
   const UpdateUser = await update(req.params.id, req.body);
   if (UpdateUser) {
@@ -47,7 +47,7 @@ app.put("/api/users/update_user/:id", async (req, res) => {
   }
 });
 
-// DELETE A USER - DELETE
+// DELETE A USER
 app.delete("/api/users/delete_user/:id", async (req, res) => {
   const deletedUser = await remove(req.params.id);
   if (deletedUser) {
