@@ -7,8 +7,8 @@ function getId() {
   return nanoid().slice(0, 5)
 }
 
-const initializeUsers = () => ([
-  { id: getId(), name: 'Yusuf Jamac', bio: 'hero' },
+export const initializeUsers = () => ([
+  { id: "1", name: 'Yusuf Jamac', bio: 'hero' },
   { id: getId(), name: 'Hawo Tako', bio: 'super hero' },
 ])
 
