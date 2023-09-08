@@ -1,14 +1,59 @@
-// Initialize express app
+ // Initializing  express app
+import express from 'express'
+import cors from 'cors'
+import {find, findById, insert, update, remove} from './users/model.js'
+import bodyParser from 'body-parser';
 
-// GET ALL USERS
+const app = express();
+app.use(cors())
 
-// GET USER BY ID
+app.use(bodyParser.json())
 
-// CREATE A NEW USER
+// get all users
+app.get("/api/users", async (req, res) => {
+    const allUSers = await find();
+    res.json(allUSers)
+})
 
-// UPDATE A USER
+//  get user by ID
+app.get("/api/users/:id", async (req, res) => {
+    const User = await findById(req.params.id);
+    if(User) {
+        res.json(Userser)
+    } else {
+        res.status(404).json({ status: 404, message: "User not found" })
+    }
+})
 
-// DELETE A USER
+// // create user 
+app.post('/api/users/create_user', async (req, res) => {
+    const newUser = await insert(req.body);
+    if(newUser) {
+        res.json(newUser);
+    } else {
+        res.status(400).json({ status: 400, message: "User was not created!" })
+    }
+})
+
+/// Update the user info
+app.put('/api/users/update_user/:id', async (req, res) => {
+    const updatedUSer = await update(req.params.id, req.body);
+    if(updatedUSer) {
+        res.json(updatedUSer);
+    } else {
+        res.status(400).json({ status: 400, message: "User was not updated" })
+    }
+})
+
+// DELETE A USER - DELETE
+app.delete('/api/users/delete_user/:id', async (req, res) => {
+    const deletedUSer = await remove(req.params.id);
+    if(deletedUSer) {
+        res.json({ status: 200, message: `User deleted id ${req.params.id} successfully` })
+    } else {
+        res.status(400).json({ status: 400, message: "User was not deleted" })
+    }
+})
 
 // export default app
 export default app;
