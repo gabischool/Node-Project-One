@@ -1,5 +1,5 @@
 {
-  "name": "node-project-one",
+  "name": "project-one",
   "version": "1.0.0",
   "type": "module",
   "description": "Node Project One",
@@ -15,5 +15,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
