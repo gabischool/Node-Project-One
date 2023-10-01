@@ -8,7 +8,7 @@ function getId() {
 }
 
 const initializeUsers = () => ([
-  { id: getId(), name: 'Yusuf Jamac', bio: 'hero' },
+  { id: "1", name: 'Yusuf Jamac', bio: 'hero' },
   { id: getId(), name: 'Hawo Tako', bio: 'super hero' },
 ])
 
