@@ -42,7 +42,7 @@ app.post('/api/users', async(req, res) =>{
 
 // UPDATE A USER
 app.put('/api/users/:id', async(req, res) => {
-    const updatedUser = update(req.params.id, req.body);
+    const updatedUser =await update(req.params.id, req.body);
     if(updatedUser){
         res.json(updatedUser)
     }
@@ -53,9 +53,9 @@ app.put('/api/users/:id', async(req, res) => {
 
 // DELETE A USER
 app.delete('/api/users/:id', async(req, res) => {
-    const delStudent = await remove(req.params.body);
+    const delStudent = await remove(req.params.id);
     if(delStudent) {
-        res.json({message: "The user with the specified ID was removed"})
+        res.json(`The user with the specified ${req.params.id} was removed`)
     }
     else{
         res.status(500).json({ message: "The user could not be removed" })
